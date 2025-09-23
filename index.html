@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EscapeLLM – EsAIpe The Enchanted Dungeon</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: #ffcc00;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    footer {
+      background: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EscapeLLM</h1>
+    <p><em>EsAIpe The Enchanted Dungeon</em></p>
+    <nav>
+      <a href="#about">Über das Projekt</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="about">
+      <h2>Über das Projekt</h2>
+      <p>
+        <strong>EscapeLLM</strong> ist ein experimentelles Puzzle-Adventure, das klassische Escape-Room-Mechaniken mit Künstlicher Intelligenz verbindet. 
+        Entwickelt wurde ein spielbarer Prototyp in <strong>Unity</strong>, bei dem ein <strong>Large Language Model (LLM, GPT-4o)</strong> 
+        als zentraler Bestandteil fungiert. Ziel war es, herauszufinden, wie KI gesteuerte Dialoge und dynamisch generierte Inhalte in einem Spiel umgesetzt werden können.
+      </p>
+      <h3>Kernidee</h3>
+      <p>
+        Spieler treten in Dialog mit einem <strong>NPC</strong>, der nicht nur Hinweise gibt, sondern auch Puzzles beeinflusst und Inhalte dynamisch generiert. 
+        Dadurch entsteht eine <strong>immersive, variable Spielerfahrung</strong>, die über einfache Zufallsmechanik hinausgeht.
+      </p>
+      <h3>Technische Umsetzung</h3>
+      <ul>
+        <li><strong>Kommunikationspipeline:</strong> Spracheingabe → Whisper (Speech-to-Text) → GPT-4o → TTS (Sprachausgabe)</li>
+        <li><strong>State-System:</strong> Jeder Raum besitzt ein eigenes Puzzle mit definiertem Kontext für konsistente KI-Antworten</li>
+        <li><strong>Trust-System:</strong> Analysiert höfliches/unhöfliches Verhalten des Spielers und beeinflusst NPC-Reaktionen</li>
+        <li><strong>Konsequenz-Mechanik:</strong> Timer, Fallenräume und visuelle Effekte erzeugen Spannung</li>
+      </ul>
+      <h3>Rätsel und Spielwelt</h3>
+      <ul>
+        <li><strong>Höflichkeitsrätsel</strong> – Einstiegspuzzle mit Dialogsteuerung</li>
+        <li><strong>Hebelwahl</strong> – falsche Wahl führt zu einer Falle</li>
+        <li><strong>Schlüsselsuche</strong> – klassisches Suchrätsel mit KI-Hinweisen</li>
+        <li><strong>Zaubertrank brauen</strong> – richtige Zutatenkombination, vom LLM bestimmt</li>
+        <li><strong>Symbol-Schloss</strong> – logisches Kombinationspuzzle mit Zeitdruck</li>
+        <li><strong>Namensrätsel</strong> – Spieler müssen die Identität des NPC herausfinden</li>
+      </ul>
+      <h3>Ergebnis</h3>
+      <p>
+        Der Prototyp zeigt, wie sich KI <strong>gezielt steuern</strong> lässt, um konsistente, interaktive Spielmechaniken zu ermöglichen. 
+        Die Verbindung von <strong>generativen Inhalten</strong> und <strong>systemischen Kontrollmechanismen</strong> macht EscapeLLM zu einem spannenden Experiment für KI-gestütztes Game Design.
+      </p>
+    </section>
+
+    <section id="screenshots">
+      <h2>Screenshots</h2>
+      <img src="screenshot1.png" alt="Screenshot 1 vom Spiel">
+      <img src="screenshot2.png" alt="Screenshot 2 vom Spiel">
+    </section>
+
+    <section id="contact">
+      <h2>Kontakt</h2>
+      <p>
+        Fragen oder Feedback? Schreib mir gerne:  
+        <a href="mailto:deinname@example.com">maiergerold@gmx.at</a>
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025, Gerold Maier</p>
+  </footer>
+</body>
+</html>
