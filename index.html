@@ -5,143 +5,249 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tales Beneath the Veil</title>
   <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background: #f4f4f9;
-      color: #333;
+      background: #0f1117;
+      color: #e8e6e3;
+      line-height: 1.7;
     }
+
+    a { color: #f0c75e; }
+
     header {
-      background: #222;
-      color: #fff;
-      padding: 2rem;
+      background:
+        linear-gradient(rgba(10,10,14,0.8), rgba(10,10,14,0.9)),
+        url("screenshot1.png") center/cover no-repeat;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 2rem;
     }
-    header h1 {
-      margin: 0;
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      margin: 0 0 1rem;
+      text-transform: uppercase;
     }
-    nav {
-      margin-top: 1rem;
-    }
-    nav a {
-      color: #ffcc00;
-      text-decoration: none;
-      margin: 0 1rem;
+
+    .tagline {
+      color: #f0c75e;
       font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       margin-bottom: 1rem;
     }
-    footer {
-      background: #222;
-      color: #aaa;
-      text-align: center;
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(12,13,19,0.95);
       padding: 1rem;
-      margin-top: 2rem;
+      text-align: center;
+      border-bottom: 1px solid #232634;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background: #f0c75e;
+      color: #111;
+    }
+
+    .btn-secondary {
+      border: 1px solid #f0c75e;
+      color: #f0c75e;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1rem;
+    }
+
+    section { margin-bottom: 4rem; }
+
+    h2 { color: #fff; }
+    h3 { color: #f0c75e; }
+
+    .box {
+      background: #171a22;
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid #262b38;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .card {
+      background: #171a22;
+      padding: 1.2rem;
+      border-radius: 12px;
+      border: 1px solid #262b38;
+    }
+
+    .screenshots {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .screenshots img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #0a0c11;
+      text-align: center;
+      padding: 1.5rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <header>
+
+<header>
+  <div class="hero">
+    <div class="tagline">KI-Gesteuertes Puzzle-Adventure</div>
     <h1>Tales Beneath the Veil</h1>
-    <p><em>AI-driven Puzzle Adventure</em></p>
-    <nav>
-      <a href="#about">Über das Projekt</a>
-      <a href="#screenshots">Screenshots</a>
-      <a href="#contact">Kontakt</a>
-    </nav>
-  </header>
-
-  <div class="container">
-    
-    <section id="about">
-      <h2>Über das Projekt</h2>
-
-      <p>
-        <strong>Tales Beneath The Veil</strong> ist ein experimentelles Puzzle-Adventure, das klassische Escape-Room-Mechaniken mit moderner KI verbindet. 
-        Das Projekt entstand aus einem ersten Prototypen – <em>EscapeLLM</em> – und wurde im Rahmen einer Bachelorarbeit zu einer deutlich erweiterten Version weiterentwickelt.
-      </p>
-
-      <p>
-        Die ursprüngliche Idee war einfach: Ein Spiel, in dem ein <strong>KI-gesteuerter NPC</strong> nicht nur Dialoge führt, sondern aktiv Teil der Spielmechanik ist. 
-        Schon im ersten Prototyp wurde eine Pipeline aufgebaut, die Spracheingabe, KI-Verarbeitung und Sprachausgabe verbindet :contentReference[oaicite:0]{index=0}. 
-        Daraus entstand ein interaktives Escape-Room-Erlebnis, bei dem jede Runde neue Inhalte generiert und sich das Verhalten des NPC dynamisch anpasst.
-      </p>
-
-      <p>
-        In der aktuellen Version wurde dieses Konzept weitergedacht: Die KI läuft nun größtenteils <strong>lokal</strong>, reagiert schneller und ermöglicht eine deutlich immersivere Erfahrung. 
-        Zusätzlich wurde das Spiel um neue Mechaniken erweitert – darunter ein System, das auf die <strong>Stimmung des Spielers</strong> reagiert und Dialoge sowie Spielverlauf beeinflusst :contentReference[oaicite:1]{index=1}.
-      </p>
-
-      <h3>Kernidee</h3>
-      <p>
-        Statt statischer Dialogoptionen sprechen Spieler direkt mit einem Charakter im Spiel. 
-        Dieser NPC reagiert flexibel, gibt Hinweise, täuscht gelegentlich – und entwickelt dabei eine eigene Persönlichkeit. 
-        Jede Interaktion fühlt sich dadurch einzigartig an.
-      </p>
-
-      <h3>Was macht das Spiel besonders?</h3>
-      <ul>
-        <li><strong>Dynamische Rätsel:</strong> Lösungen und Hinweise werden zur Laufzeit generiert</li>
-        <li><strong>Sprachbasierte Interaktion:</strong> Kein Menü – echte Gespräche mit dem NPC</li>
-        <li><strong>Emotion als Mechanik:</strong> Deine Stimmung beeinflusst den Spielverlauf</li>
-        <li><strong>Hohe Wiederspielbarkeit:</strong> Jede Session verläuft anders</li>
-      </ul>
-
-      <h3>Spielerlebnis</h3>
-      <p>
-        Das Spiel führt durch mehrere Räume mit unterschiedlichen Rätseln – von klassischen Such- und Kombinationsaufgaben bis hin zu kreativen Herausforderungen wie dem Brauen eines Zaubertranks oder dem Entschlüsseln einer Identität. 
-        Der NPC begleitet den Spieler dabei durchgehend und wird zum zentralen Element des Spiels.
-      </p>
-
-      <h3>Von der Idee zum Prototyp</h3>
-      <p>
-        Während <em>EscapeLLM</em> vor allem die Machbarkeit von KI-gestützter Interaktion demonstrierte, zeigt <strong>Tales Beneath The Veil</strong>, wie sich diese Technologie gezielt in ein Spielerlebnis integrieren lässt. 
-        Der Fokus liegt nicht nur auf Technik, sondern auf der Frage: <em>Wie kann KI ein Spiel wirklich interessanter machen?</em>
-      </p>
-
-      <h3>Ergebnis</h3>
-      <p>
-        Das Projekt zeigt, dass KI mehr sein kann als ein reines Gimmick: 
-        Richtig eingesetzt wird sie zu einem Werkzeug, das neue Formen von Gameplay ermöglicht – persönlicher, dynamischer und überraschender.
-      </p>
-    </section>
-
-    <section id="screenshots">
-      <h2>Screenshots</h2>
-      <img src="screenshot1.png" alt="">
-      <img src="screenshot2.png" alt="">
-      <img src="screenshot3.png" alt="">
-    </section>
-
-    <section id="contact">
-      <h2>Kontakt</h2>
-      <p>
-        Fragen oder Feedback? Schreib mir gerne:  
-        <a href="mailto:maiergerold@gmx.at">maiergerold@gmx.at</a>
-      </p>
-      <p>Oder auf Discord: @debatablename</p>
-
-      <h3>Feedback</h3>
-      <img src="qr_code.png" alt="">
-    </section>
-
+    <p>
+      Betritt eine mysteriöse Welt, sprich direkt mit einem NPC und löse Rätsel,
+      die sich durch deine Entscheidungen und Interaktionen verändern.
+    </p>
+    <a class="btn btn-primary" href="#about">Projekt entdecken</a>
+    <a class="btn btn-secondary" href="#screenshots">Screenshots ansehen</a>
   </div>
+</header>
 
-  <footer>
-    <p>&copy; 2026, Gerold Maier</p>
-  </footer>
+<nav>
+  <a href="#about">Projekt</a>
+  <a href="#features">Highlights</a>
+  <a href="#screenshots">Screenshots</a>
+  <a href="#contact">Kontakt</a>
+</nav>
+
+<div class="container">
+
+<section id="about">
+  <div class="box">
+    <h2>Über das Projekt</h2>
+
+    <p>
+      <strong>Tales Beneath The Veil</strong> ist ein experimentelles Puzzle-Adventure,
+      das klassische Escape-Room-Mechaniken mit moderner KI verbindet.
+    </p>
+
+    <p>
+      Ausgangspunkt war der Prototyp <em>EscapeLLM</em>, in dem erstmals getestet wurde,
+      wie sich ein Large Language Model direkt in ein Spiel integrieren lässt.
+      Ziel war es, nicht nur Dialoge zu erzeugen, sondern das Spiel selbst dynamisch zu beeinflussen.
+    </p>
+
+    <p>
+      In der aktuellen Version wurde dieses Konzept weiterentwickelt:
+      Die KI ist stärker in das Gameplay eingebunden, reagiert flexibler
+      und ermöglicht eine deutlich immersivere Spielerfahrung.
+    </p>
+
+    <h3>Kernidee</h3>
+    <p>
+      Der Spieler spricht direkt mit einem NPC, der Hinweise geben, täuschen
+      oder Informationen zurückhalten kann. Dadurch entsteht eine Interaktion,
+      die sich weniger wie ein klassisches Spiel und mehr wie ein echtes Gespräch anfühlt.
+    </p>
+
+    <h3>Spielerlebnis</h3>
+    <p>
+      Das Spiel führt durch mehrere Räume mit unterschiedlichen Rätseln –
+      von klassischen Suchaufgaben bis hin zu kreativen Herausforderungen.
+      Der NPC begleitet den Spieler dabei durchgehend und wird zum zentralen Element.
+    </p>
+
+    <h3>Ergebnis</h3>
+    <p>
+      Das Projekt zeigt, wie KI gezielt eingesetzt werden kann,
+      um neue Formen von Gameplay zu ermöglichen:
+      dynamischer, persönlicher und weniger vorhersehbar.
+    </p>
+  </div>
+</section>
+
+<section id="features">
+  <h2>Highlights</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Direkte Interaktion</h3>
+      <p>Sprich frei mit dem NPC statt feste Dialogoptionen zu wählen.</p>
+    </div>
+
+    <div class="card">
+      <h3>Dynamische Rätsel</h3>
+      <p>Hinweise und Lösungen verändern sich je nach Spielverlauf.</p>
+    </div>
+
+    <div class="card">
+      <h3>Emotion als Mechanik</h3>
+      <p>Deine Ausdrucksweise beeinflusst die Reaktionen im Spiel.</p>
+    </div>
+
+    <div class="card">
+      <h3>Wiederspielbarkeit</h3>
+      <p>Jeder Durchlauf kann sich anders anfühlen.</p>
+    </div>
+  </div>
+</section>
+
+<section id="screenshots">
+  <h2>Screenshots</h2>
+
+  <div class="screenshots">
+    <img src="screenshot1.png" alt="">
+    <img src="screenshot2.png" alt="">
+    <img src="screenshot3.png" alt="">
+  </div>
+</section>
+
+<section id="contact">
+  <div class="box">
+    <h2>Kontakt</h2>
+    <p>Email: <a href="mailto:maiergerold@gmx.at">maiergerold@gmx.at</a></p>
+    <p>Discord: @debatablename</p>
+
+    <h3>Feedback</h3>
+    <img src="qr_code.png" alt="">
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Gerold Maier</p>
+</footer>
+
 </body>
 </html>
